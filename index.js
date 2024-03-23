@@ -19,6 +19,6 @@ app.listen(PORT, () => {
 
 app.get('/getVideoURL', async (req, res) => {
     const { videoURL } = req.query;
-    Youtube.getInfo({url: videoURL}).then(video => res.json({ formats:video['formats']}));
-    
+    await Youtube.getInfo({url: videoURL}).then(video => console.log(video));
+    console.log('sss');
 });
